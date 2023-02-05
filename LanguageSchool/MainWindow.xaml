@@ -1,0 +1,40 @@
+﻿<Window x:Class="LanguageSchool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LanguageSchool"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        ResizeMode="NoResize"
+        Title="Школа иностранных языков " Height="550" Width="800"  WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="0,5,0,1" HorizontalAlignment="Center" Width="280">
+            <StackPanel Orientation="Horizontal">
+                <Image Name="imageMainLogo" Source="Resources/school_logo.png" Width="50" Height="50"></Image>
+                <TextBlock Margin="15 15 0 0"  Style="{StaticResource tbFontFamily}" Text="Школа иностранных языков" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"></TextBlock>
+
+            </StackPanel>
+            
+            
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Grid.Row="0" Margin="5 25 0 0">
+            <TextBlock  Style="{StaticResource tbFontFamily}" Text="Режим администратора" HorizontalAlignment="Center"  MouseDown="TextBlock_MouseDown" FontWeight="Bold" Cursor="Hand" Name="tbAdminAuth">
+                <TextBlock.ToolTip>
+                    Нажмите, чтобы активировать режим администратора
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBlock  Visibility="Collapsed" Style="{StaticResource tbFontFamily}" Text="Режим администратора активен" HorizontalAlignment="Center" MouseDown="TextBlock_MouseDown" FontWeight="Bold" Cursor="Hand" Name="tbAdminAuthOut">
+                <TextBlock.ToolTip>
+                    Нажмите, чтобы отключить режим администратора
+                </TextBlock.ToolTip>
+            </TextBlock>
+        </StackPanel>
+        <Frame Grid.Row="1" Name="fMain" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
